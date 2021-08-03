@@ -1,0 +1,6 @@
+framework module Pods_BitbucketParsingDataTests {
+  umbrella header "Pods-BitbucketParsingDataTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

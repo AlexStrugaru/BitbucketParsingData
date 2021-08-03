@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_BitbucketParsingData_BitbucketParsingDataUITests : NSObject
+@end
+@implementation PodsDummy_Pods_BitbucketParsingData_BitbucketParsingDataUITests
+@end
