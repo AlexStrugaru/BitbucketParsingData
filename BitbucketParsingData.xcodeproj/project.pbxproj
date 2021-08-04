@@ -185,15 +185,39 @@
 		FF3F962726B9BAF600874BEF /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FF3F962C26BA5BDE00874BEF /* ViewModel */,
+				FF3F962B26BA5BD000874BEF /* Views */,
+				FF3F962A26BA5BC800874BEF /* Model */,
 				FF3F95F126B9BA5700874BEF /* AppDelegate.swift */,
 				FF3F95F326B9BA5700874BEF /* SceneDelegate.swift */,
-				FF3F95F526B9BA5700874BEF /* ContentView.swift */,
-				FF3F962126B9BA7200874BEF /* Model.swift */,
 				FF3F962326B9BAAD00874BEF /* Extension+String.swift */,
-				FF3F962526B9BAD400874BEF /* APIManager.swift */,
-				FF3F962826B9EFD200874BEF /* DetailView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		FF3F962A26BA5BC800874BEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF3F962126B9BA7200874BEF /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF3F962B26BA5BD000874BEF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF3F95F526B9BA5700874BEF /* ContentView.swift */,
+				FF3F962826B9EFD200874BEF /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FF3F962C26BA5BDE00874BEF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FF3F962526B9BAD400874BEF /* APIManager.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
