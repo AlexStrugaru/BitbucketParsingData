@@ -9,13 +9,10 @@ import SwiftUI
 
 struct AdditionalInformation {
 	let website: String
-	let has_wiki: Bool
 	let forkPolicy: String
 	let language: String
 	let size: Int
-	let isPrivate: Bool
 	let description: String
-	let hasIssues: Bool
 	let name: String
 }
 
@@ -24,12 +21,34 @@ struct DetailView: View {
 	let additionalInformation: AdditionalInformation
 
 	var body: some View {
-		Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		VStack(alignment: .leading) {
+				Text("Name: ")
+					.bold()
+				+ Text(additionalInformation.name)
+				Text("Description: ")
+					.bold()
+				+ Text(additionalInformation.description)
+				Text("Fork Policy: ")
+					.bold()
+				+ Text(additionalInformation.forkPolicy)
+				Text("Language: ")
+					.bold()
+				+ Text(additionalInformation.language)
+			if let url = URL(string: additionalInformation.website) {
+				HStack {
+					Text("Website: ")
+					Link(additionalInformation.website, destination: url)
+				}
+			}
+
+		}
+		Spacer()
+		.padding()
 	}
 }
 
 struct DetailView_Previews: PreviewProvider {
 	static var previews: some View {
-		DetailView()
+		DetailView(additionalInformation: AdditionalInformation(website: "", forkPolicy: "fork_allowed", language: "Swift", size: 2345, description: "", name: "Test"))
 	}
 }

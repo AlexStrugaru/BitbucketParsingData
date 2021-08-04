@@ -7,7 +7,7 @@
 
 import Foundation
 
-private enum Constants {
+enum Constants {
 	static let url = "https://api.bitbucket.org/2.0/repositories"
 }
 
@@ -32,11 +32,13 @@ enum ResponseError {
 class APIManager: ObservableObject {
 
 	@Published var bitbucketValues: Repository?
+	@Published var moreData: [Values]? = []
 	@Published var error: ResponseError?
+	@Published var isLoading: Bool = true
 
-	func fetchData() {
+	func fetchData(urlString: String) {
 
-		guard let url = URL(string: Constants.url) else {
+		guard let url = URL(string: urlString) else {
 			self.error = .invalidUrl
 			return
 		}
@@ -63,7 +65,9 @@ class APIManager: ObservableObject {
 			do {
 				let values = try JSONDecoder().decode(Repository.self, from: data)
 				DispatchQueue.main.async {
+					self.isLoading = false
 					self.bitbucketValues = values
+					self.moreData?.append(contentsOf: self.bitbucketValues?.values ?? [])
 				}
 			} catch {
 				DispatchQueue.main.async {
