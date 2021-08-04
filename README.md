@@ -11,13 +11,13 @@ The structure is done based on MVVM pattern
   - published values after the data is fetched
   - Error handling (4 cases treated)
 - **Views**:
-  ContainerView: 
+  - ContainerView: 
      - Loading view
      - Alert view which shows the error type if the APIManager throws error
      - ScrollView which has the views grouped in VStack and HStack
      - Next button showed when there is non empty "next parameter"
      - On next button action the view loads more data
-  DetailView: 
+  - DetailView: 
      - Detailed information of the respository
      - Website url parameter clickable, opens Safari
 - **Pod file**: 
